@@ -1,0 +1,47 @@
+##Aim: C is for Cookie...
+
+###COOKIE:
+* small file given by a website to your web browser for storage on 
+  your LOCAL machine
+
+* useful for maintaining awareness of identity across multiple web pages
+  on same site
+
+* transmitted with request ( sniffable )
+
+
+C is for Cookie, but that's not good enough for me...
+
+S is for Session (also "Secure")
+
+* sniffable, but encrypted
+
+* in Flask:
+  * securely designed cookie
+  * session obj works like a dict
+
+
+eg,
+
+to add data to a session:
+   session[key] = value
+
+to remove data from a session:
+   session.pop(key)
+
+
+Q: What must a dev do to guarantee a private session?
+
+A: Generate a private key!
+
+   app.secret_key = <random_generated_string>
+
+to get a randomized string:
+   
+   import os
+   os.urandom(32) --> 32 bits of random data as a string
+
+
+MAXIM:
+
+NEVER store a private ket in a publicly-viewable location (like GitHub)
